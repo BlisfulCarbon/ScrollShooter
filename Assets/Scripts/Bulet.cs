@@ -7,10 +7,6 @@ public class Bulet : MonoBehaviour
     [Header("Movement Variables")] 
     public float speed;
     private Rigidbody2D rigidbody;
-
-    [Header("Lifetime")]
-    public float lifetime;
-    private float lifetimeSeconds;
     
     [Header("Damage")]
     public int damage;
@@ -18,7 +14,6 @@ public class Bulet : MonoBehaviour
 
     private void Start()
     {
-        lifetimeSeconds = lifetime;
         rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.velocity = new Vector2(0f, speed);
     }
@@ -31,14 +26,5 @@ public class Bulet : MonoBehaviour
         //TODO: hide impact
         Instantiate(impactParticle, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
-    }
-
-    private void Update()
-    {
-        lifetime -= Time.deltaTime;
-        if (lifetime <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 }

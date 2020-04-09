@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6595733018894197533}
   - component: {fileID: 6595733018894197531}
   - component: {fileID: 6595733018894197532}
-  - component: {fileID: 6015226708435826344}
+  - component: {fileID: -3813592631111618433}
   m_Layer: 8
   m_Name: ImpactParticle
   m_TagString: Impact
@@ -4755,7 +4755,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &6015226708435826344
+--- !u!114 &-3813592631111618433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4764,7 +4764,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6595733018894197534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8298967476d0b89458873dea8d7aee4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a4eab3935e11354595dd125888c5c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLife: 1
+  destroyTime: 1

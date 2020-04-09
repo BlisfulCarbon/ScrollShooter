@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     {
         straight,
         wavy,
+        center, 
         stand
     }
 
@@ -31,6 +32,9 @@ public class EnemyMovement : MonoBehaviour
     {
         switch (strategy)
         {
+            case MoveStrategy.center:
+                MoveCenter();
+                break;
             case MoveStrategy.wavy:
                 MoveWavy();
                 break;
@@ -41,7 +45,12 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
     }
-    
+
+    private void MoveCenter()
+    {
+     
+    }
+
     private void MoveStraight()
     {
         _body.velocity = new Vector2(_body.velocity.x, -speed);
