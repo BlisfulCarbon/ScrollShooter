@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health;
-    void Update()
+    private void Update()
     {
         if (health <= 0)
         {

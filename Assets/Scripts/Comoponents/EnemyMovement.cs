@@ -32,8 +32,7 @@ public class EnemyMovement : MonoBehaviour
     {
         switch (strategy)
         {
-            case MoveStrategy.center:
-                MoveCenter();
+            case MoveStrategy.center: 
                 break;
             case MoveStrategy.wavy:
                 MoveWavy();
@@ -44,11 +43,6 @@ public class EnemyMovement : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    private void MoveCenter()
-    {
-     
     }
 
     private void MoveStraight()

@@ -1,20 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-    [Header("Fire Variables")]
-    public Transform firePoint;
-    public GameObject weapon;
+    [Header("Fire Variables")] public Transform firePoint;
+
     public float fireWait = 3f;
     private float fireWaitSeconds;
-    
-    void Start()
+    public GameObject weapon;
+
+    private void Start()
     {
         fireWaitSeconds = fireWait;
     }
-    void Update()
+
+    private void Update()
     {
         fireWaitSeconds -= Time.deltaTime;
         if (fireWaitSeconds <= 0)
