@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 194509298722058387}
-  weapon: {fileID: 7257905182837755186, guid: 670994bdc2d15e544a187c14d170147b, type: 3}
   fireWait: 1
+  weapon: {fileID: 7257905182837755186, guid: 670994bdc2d15e544a187c14d170147b, type: 3}
 --- !u!1001 &6323182549246365634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 1751611609068745586, guid: bcdcc1c3012452948b649e1cd31d0734,
         type: 3}
       propertyPath: m_Name
-      value: PlayerTrailLeft
+      value: TrailLeft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcdcc1c3012452948b649e1cd31d0734, type: 3}
@@ -286,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 1751611609068745586, guid: bcdcc1c3012452948b649e1cd31d0734,
         type: 3}
       propertyPath: m_Name
-      value: PlayerTrailRight
+      value: TrailRight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcdcc1c3012452948b649e1cd31d0734, type: 3}

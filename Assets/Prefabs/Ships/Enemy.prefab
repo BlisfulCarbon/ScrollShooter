@@ -183,7 +183,7 @@ PrefabInstance:
     - target: {fileID: 796083658699942965, guid: cdca5e56e835d7e4c89383a66ee1db59,
         type: 3}
       propertyPath: m_Name
-      value: EnemyTrailRight
+      value: TrailRight
       objectReference: {fileID: 0}
     - target: {fileID: 796083658699942966, guid: cdca5e56e835d7e4c89383a66ee1db59,
         type: 3}
@@ -258,7 +258,7 @@ PrefabInstance:
     - target: {fileID: 796083658699942965, guid: cdca5e56e835d7e4c89383a66ee1db59,
         type: 3}
       propertyPath: m_Name
-      value: EnemyTrailLeft
+      value: TrailLeft
       objectReference: {fileID: 0}
     - target: {fileID: 796083658699942966, guid: cdca5e56e835d7e4c89383a66ee1db59,
         type: 3}
