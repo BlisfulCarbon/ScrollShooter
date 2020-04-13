@@ -15,7 +15,7 @@ public class ScoreService : MonoBehaviour
         _score = new Score();
     }
 
-    private void OnIncrementScore(Actor acotr)
+    private void OnIncrementScore(Actor actor)
     {
         _score.incrementScore();
         scoreInput.text = _score.getScore().ToString();

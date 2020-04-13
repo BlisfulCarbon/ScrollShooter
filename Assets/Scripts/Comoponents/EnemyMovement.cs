@@ -55,7 +55,6 @@ public class EnemyMovement : MonoBehaviour
         yNew = transform.position.y - yChange;
         xNew = (float) (amplitude * Math.Sin(period * yNew) + shift);
         Vector2 temPosition = new Vector2(xNew, yNew);
-        Debug.Log(temPosition);
         transform.position = temPosition;
     }
 }

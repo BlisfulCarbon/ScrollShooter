@@ -59,22 +59,24 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Comoponents\BackgroundScroller.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Bottom.cs" />
      <Compile Include="Assets\Scripts\Comoponents\Bulet.cs" />
      <Compile Include="Assets\Scripts\Comoponents\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\DestroyWhenCollisionBottom.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\Comoponents\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\Comoponents\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Data\Sound.cs" />
      <Compile Include="Assets\Scripts\Events\BaseEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EnemyDiedEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EventAggregator.cs" />
      <Compile Include="Assets\Scripts\Model\Actor.cs" />
      <Compile Include="Assets\Scripts\Model\EnemyWave.cs" />
      <Compile Include="Assets\Scripts\Model\Score.cs" />
+     <Compile Include="Assets\Scripts\Services\AudioService.cs" />
      <Compile Include="Assets\Scripts\Services\ScoreService.cs" />
-     <Compile Include="Assets\Scripts\Services\SoundService.cs" />
-     <Compile Include="Assets\Scripts\Starter\Starter.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/programming/gameDev/Projects/ScrollShoter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
