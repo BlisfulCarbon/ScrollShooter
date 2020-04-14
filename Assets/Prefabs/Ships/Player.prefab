@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 194509299315370746}
   - component: {fileID: 194509299315370744}
   - component: {fileID: 194509299315370745}
+  - component: {fileID: -5539437649137084721}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -146,6 +147,20 @@ MonoBehaviour:
   firePoint: {fileID: 194509298722058387}
   fireWait: 1
   weapon: {fileID: 7257905182837755186, guid: 670994bdc2d15e544a187c14d170147b, type: 3}
+--- !u!114 &-5539437649137084721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194509299315370741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbec63c717090f43a48c58a7b001010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publishEvent: {fileID: 0}
+  collisionObject: {fileID: 0}
 --- !u!1001 &6323182549246365634
 PrefabInstance:
   m_ObjectHideFlags: 0

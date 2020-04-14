@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Comoponents\Bulet.cs" />
      <Compile Include="Assets\Scripts\Comoponents\DestroyByTime.cs" />
      <Compile Include="Assets\Scripts\Comoponents\DestroyWhenCollisionBottom.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\DestroyWhenCollisionEnemy.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Comoponents\EnemySpawner.cs" />
@@ -70,13 +71,19 @@
      <Compile Include="Assets\Scripts\Comoponents\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Data\Sound.cs" />
      <Compile Include="Assets\Scripts\Events\BaseEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EnemyCollisionPlyaer.cs" />
      <Compile Include="Assets\Scripts\Events\EnemyDiedEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EnemyGetDamageEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EnemySmashIntoPlayerEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EventAggregator.cs" />
+     <Compile Include="Assets\Scripts\Events\TakeShotEvent.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\Idamageable.cs" />
+     <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\Model\Actor.cs" />
-     <Compile Include="Assets\Scripts\Model\EnemyWave.cs" />
      <Compile Include="Assets\Scripts\Model\Score.cs" />
-     <Compile Include="Assets\Scripts\Services\AudioService.cs" />
-     <Compile Include="Assets\Scripts\Services\ScoreService.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/programming/gameDev/Projects/ScrollShoter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

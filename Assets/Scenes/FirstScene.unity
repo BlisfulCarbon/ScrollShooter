@@ -298,6 +298,40 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 987164594036694150}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &847282854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 194509299315370741, guid: e4de48950acac384f9bc73389588238a,
+    type: 3}
+  m_PrefabInstance: {fileID: 194509297862026610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &847282855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847282854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f6d9896d04c99f478890c200ded8cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &847282859
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847282854}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.12
 --- !u!1 &1036063685
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,13 +485,25 @@ MonoBehaviour:
   - name: FirstSceneMusic
     clip: {fileID: 8300000, guid: b3c4218b155fb034f9fe0098ac40f365, type: 3}
     volume: 0.1
-    pitch: 0.8
-    loop: 0
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
   - name: DestroyShip
+    clip: {fileID: 8300000, guid: b83c8aa11ccdd4c438435d9ed9b0a45b, type: 3}
+    volume: 0.15
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: DamageEnemy
     clip: {fileID: 8300000, guid: b36dbd37c3c91e341971a1dbca7fcee7, type: 3}
-    volume: 0.1
-    pitch: 0.8
+    volume: 0.15
+    pitch: 2
+    loop: 0
+    source: {fileID: 0}
+  - name: Laser
+    clip: {fileID: 8300000, guid: c4d75cc4bbc69964197452a1dfff54e4, type: 3}
+    volume: 0.15
+    pitch: 2
     loop: 0
     source: {fileID: 0}
 --- !u!1 &1674316098
@@ -663,7 +709,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 081e79a42f68725459f2696dca87017f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5539437649137084721, guid: e4de48950acac384f9bc73389588238a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4de48950acac384f9bc73389588238a, type: 3}
 --- !u!1001 &987164594036694150
 PrefabInstance:
@@ -1141,6 +1188,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298631384135264399, guid: 653d6613ca578e1469f6c27e15b206c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -108.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298631384135264399, guid: 653d6613ca578e1469f6c27e15b206c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 334.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298631384489701676, guid: 653d6613ca578e1469f6c27e15b206c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 334.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298631384489701676, guid: 653d6613ca578e1469f6c27e15b206c4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 653d6613ca578e1469f6c27e15b206c4, type: 3}
