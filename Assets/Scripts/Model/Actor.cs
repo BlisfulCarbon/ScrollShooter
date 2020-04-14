@@ -1,16 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Actor : MonoBehaviour
-{
-    void Start()
+    public class Actor : MonoBehaviour
     {
-        
-    }
 
-    void Update()
-    {
-        
     }
-}

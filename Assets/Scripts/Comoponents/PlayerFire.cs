@@ -1,30 +1,33 @@
 ﻿using UnityEngine;
 
-public class PlayerFire : MonoBehaviour
+namespace ScrollShooter.Components
 {
-    [Header("Fire Variables")] public Transform firePoint;
-
-    public float fireWait = 3f;
-    private float fireWaitSeconds;
-    public GameObject weapon;
-
-    private void Start()
+    public class PlayerFire : MonoBehaviour
     {
-        fireWaitSeconds = fireWait;
-    }
+        [Header("Fire Variables")] 
+        public Transform firePoint;
+        public GameObject weapon;
+        public float fireWait = 3f;
+        private float fireWaitSeconds;
 
-    private void Update()
-    {
-        fireWaitSeconds -= Time.deltaTime;
-        if (fireWaitSeconds <= 0)
+        private void Start()
         {
-            Fire();
             fireWaitSeconds = fireWait;
         }
-    }
 
-    public void Fire()
-    {
-        Instantiate(weapon, firePoint.position, Quaternion.identity);
+        private void Update()
+        {
+            fireWaitSeconds -= Time.deltaTime;
+            if (fireWaitSeconds <= 0)
+            {
+                Fire();
+                fireWaitSeconds = fireWait;
+            }
+        }
+
+        public void Fire()
+        {
+            Instantiate(weapon, firePoint.position, Quaternion.identity);
+        }
     }
 }

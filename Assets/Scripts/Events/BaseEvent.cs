@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseEvent : MonoBehaviour
+namespace ScrollShooter.Events
 {
-    private readonly List<Action<Actor>> _callbacks = new List<Action<Actor>>(); 
-
-    public void Subscribe(Action<Actor> callback)
+    public class BaseEvent : MonoBehaviour
     {
-        _callbacks.Add(callback);
-    }
+        private readonly List<Action<Actor>> _callbacks = new List<Action<Actor>>();
 
-    public void Publish(Actor unit)
-    {
-        foreach (Action<Actor> callback in _callbacks)
-            callback(unit);
+        public void Subscribe(Action<Actor> callback)
+        {
+            _callbacks.Add(callback);
+        }
+
+        public void Publish(Actor unit)
+        {
+            foreach (var callback in _callbacks)
+                callback(unit);
+        }
     }
 }

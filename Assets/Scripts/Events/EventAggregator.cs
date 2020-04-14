@@ -1,8 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EventAggregator: MonoBehaviour
+namespace ScrollShooter.Events
 {
-    public static EnemyDiedEvent enemyDied = new EnemyDiedEvent();
+    public class EventAggregator : MonoBehaviour
+    {
+        public static EnemyDiedEvent enemyDied = new EnemyDiedEvent();
+        public static EnemyGetDamageEvent enemyGetDamage = new EnemyGetDamageEvent();
+        public static TakeShotEvent TakeShot = new TakeShotEvent();
+        public static EnemySmashIntoPlayerEvent enemySmashIntoPlayer = new EnemySmashIntoPlayerEvent();
+    }
 }

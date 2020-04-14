@@ -1,12 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class DestroyByTime : MonoBehaviour
+namespace ScrollShooter.Components
 {
-    public float destroyTime = 0;
-    private void Start()
+    public class DestroyByTime : MonoBehaviour
     {
-        Destroy(this.gameObject, destroyTime);
+        public float destroyTime = 0;
+
+        private void Start()
+        {
+            Destroy(this.gameObject, destroyTime);
+        }
     }
 }

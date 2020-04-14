@@ -1,45 +1,47 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class EnemySpawner : MonoBehaviour
+namespace ScrollShooter.Components
 {
-    public float spawnTimer = 2;
-
-    public List<EnemyWave> stage;
-    public float timer;
-
-    public GameObject simpleEnemy;
-    public GameObject hardEnemy;
-    
-    private void Update()
+    public class EnemySpawner : MonoBehaviour
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnTimer)
+        public float spawnTimer = 2;
+        public float timer;
+
+        public GameObject simpleEnemy;
+        public GameObject hardEnemy;
+
+        private void Update()
         {
-            float waveNumber = Random.Range(1, 3);
-            switch(waveNumber)
+            timer += Time.deltaTime;
+            if (timer >= spawnTimer)
             {
-                case 1:
-                    SpawnSimpleWave();
-                    break;
-                case 2:
-                    SpawnHardWave();
-                    break;
+                float waveNumber = Random.Range(1, 3);
+                switch (waveNumber)
+                {
+                    case 1:
+                        SpawnSimpleWave();
+                        break;
+                    case 2:
+                        SpawnHardWave();
+                        break;
+                }
+
+                timer = 0;
             }
-            timer = 0;
         }
-    }
 
-    private void SpawnSimpleWave()
-    {
-        Instantiate(simpleEnemy, new Vector3(transform.position.x - 1, transform.position.y), Quaternion.identity);
-        Instantiate(simpleEnemy, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
-        Instantiate(simpleEnemy, new Vector3(transform.position.x + 0.8f, transform.position.y), Quaternion.identity);
-    }
+        private void SpawnSimpleWave()
+        {
+            Instantiate(simpleEnemy, new Vector3(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            Instantiate(simpleEnemy, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
+            Instantiate(simpleEnemy, new Vector3(transform.position.x + 0.8f, transform.position.y),
+                Quaternion.identity);
+        }
 
-    private void SpawnHardWave()
-    {
-        Instantiate(hardEnemy, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
+        private void SpawnHardWave()
+        {
+            Instantiate(hardEnemy, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
+        }
     }
 }

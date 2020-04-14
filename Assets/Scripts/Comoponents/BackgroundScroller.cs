@@ -1,13 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BackgroundScroller : MonoBehaviour
+namespace ScrollShooter.Components
 {
-    public float speed = 0.2f;
-    public Renderer bgRend;
-    private void Update()
+    public class BackgroundScroller : MonoBehaviour
     {
-        bgRend.material.mainTextureOffset = new Vector2(0, Time.time * speed);
+        public float speed = 0.2f;
+        public Renderer bgRend;
+
+        private void Update()
+        {
+            bgRend.material.mainTextureOffset = new Vector2(0, Time.time * speed);
+        }
     }
 }

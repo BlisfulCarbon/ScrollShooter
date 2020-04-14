@@ -1,22 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using ScrollShooter.Events;
+using ScrollShooter.Interfaces;
 
-public class EnemyHealth : Actor
+namespace ScrollShooter.Components
 {
-    public int health;
-    private void Update()
+    public class EnemyHealth : Actor, Idamageable, Enemy
     {
-        if (health <= 0)
-        {
-            //TODO: pool object job
-            EventAggregator.enemyDied.Publish(this);
-            Destroy(this.gameObject);
-        }
-    }
+        public int health;
 
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
+        private void Update()
+        {
+            if (health <= 0)
+            {
+                EventAggregator.enemyDied.Publish(this);
+                Destroy(this.gameObject);
+            }
+        }
+
+        public void TakeDamage(int damage)
+        {
+            EventAggregator.enemyGetDamage.Publish(this);
+            health -= damage;
+        }
     }
 }
