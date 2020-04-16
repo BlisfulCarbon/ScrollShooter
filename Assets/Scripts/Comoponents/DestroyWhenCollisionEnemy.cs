@@ -6,12 +6,10 @@ public class DestroyWhenCollisionEnemy : Actor
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Plyer trriger");
         if (other.GetComponent<Enemy>() == null)
             return;
 
-        Debug.Log("It's enemy");
-        EventAggregator.enemySmashIntoPlayer.Publish(this);
+        EventManager.enemySmashIntoPlayer.Publish();
         Destroy(this.gameObject);
     }
 }

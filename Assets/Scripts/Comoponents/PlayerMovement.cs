@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScrollShooter.Config;
+using UnityEngine;
 
 namespace ScrollShooter.Components
 {
@@ -31,16 +32,18 @@ namespace ScrollShooter.Components
 
             if (isControlling)
             {
-                mouseEndPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                xDiff = (mouseEndPosition.x - mouseFirstPosition.x) * controlMultiplier;
-                yDiff = (mouseEndPosition.y - mouseFirstPosition.y) * controlMultiplier;
-                playerTargetPosition = new Vector2(playerStartPosiston.x + xDiff, playerStartPosiston.y + yDiff);
-                transform.position = Vector2.Lerp(transform.position, playerTargetPosition, .2f);
+                    mouseEndPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    xDiff = (mouseEndPosition.x - mouseFirstPosition.x) * controlMultiplier;
+                    yDiff = (mouseEndPosition.y - mouseFirstPosition.y) * controlMultiplier;
+                    playerTargetPosition = new Vector2(playerStartPosiston.x + xDiff, playerStartPosiston.y + yDiff);
+                    transform.position = Vector2.Lerp(transform.position, playerTargetPosition, .2f);
             }
 
-            var xPos = Mathf.Clamp(transform.position.x, -1f, 1f);
-            var yPos = Mathf.Clamp(transform.position.y, -1.8f, 1.8f);
-            transform.position = new Vector3(xPos, yPos, 0);
+            var position = transform.position;
+            var xPos = Mathf.Clamp(position.x, Constants.leftBoundaries, Constants.rightBoundaries);
+            var yPos = Mathf.Clamp(position.y, Constants.downBoundaries, Constants.upBoundaries);
+            position = new Vector3(xPos, yPos, 0);
+            transform.position = position;
         }
     }
 }

@@ -11,14 +11,14 @@ namespace ScrollShooter.Components
         {
             if (health <= 0)
             {
-                EventAggregator.enemyDied.Publish(this);
+                EventManager.enemyDied.Publish();
                 Destroy(this.gameObject);
             }
         }
 
         public void TakeDamage(int damage)
         {
-            EventAggregator.enemyGetDamage.Publish(this);
+            EventManager.enemyGetDamage.Publish();
             health -= damage;
         }
     }

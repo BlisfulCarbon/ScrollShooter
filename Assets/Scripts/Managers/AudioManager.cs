@@ -1,38 +1,33 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 using ScrollShooter.Events;
 using UnityEngine;
 using ScrollShooter.Data;
 
 namespace ScrollShooter.Managers
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : BaseManager<AudioManager>
     {
-        public static AudioManager instance;
         public List<Sound> sounds;
 
         private void Start()
         {
-            Play(SoundTitles.FirstSceneMusic);
-            EventAggregator.enemyDied.Subscribe((actor) => Play(SoundTitles.DestroyShip));
-            EventAggregator.enemyGetDamage.Subscribe((actor) => Play(SoundTitles.DamageEnemy));
-            EventAggregator.TakeShot.Subscribe((actor) => Play(SoundTitles.Laser));
-            EventAggregator.enemySmashIntoPlayer.Subscribe((actor) => Play(SoundTitles.GameOver));
+            Play(SoundTitles.MenuMusic);
+            
+            EventManager.gameStart.Subscribe(() =>
+            {
+                Stop(SoundTitles.MenuMusic);
+                Play(SoundTitles.FirstSceneMusic);
+            });
+            
+            EventManager.enemyDied.Subscribe(() => Play(SoundTitles.DestroyShip));
+            EventManager.enemyGetDamage.Subscribe(() => Play(SoundTitles.DamageEnemy));
+            EventManager.TakeShot.Subscribe(() => Play(SoundTitles.Laser));
+            EventManager.enemySmashIntoPlayer.Subscribe(() => Play(SoundTitles.GameOver));
         }
 
         private void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            DontDestroyOnLoad(gameObject);
-
             foreach (var s in sounds)
             {
                 s.source = gameObject.AddComponent<AudioSource>();
@@ -43,7 +38,7 @@ namespace ScrollShooter.Managers
             }
         }
 
-        public void Play(string name)
+        private void Play(string name)
         {
             var currentSound = sounds.Find(sound => sound.name == name);
             if (currentSound == null)
@@ -52,12 +47,41 @@ namespace ScrollShooter.Managers
                 return;
             }
 
-            currentSound.source.Play();
+            try
+            {
+                currentSound.source.Play();
+            }
+            catch (MissingReferenceException e)
+            {
+                Debug.LogWarning("SoundManager -> Play ( name: " + name + ") " + e);
+            }
+        }
+
+
+        private void Stop(string name)
+        {
+            var currentSound = sounds.Find(sound => sound.name == name);
+            if (currentSound == null)
+            {
+                Debug.LogWarning(GetType().Name + " -> Sound: " + name + " not found!");
+                return;
+            }
+
+            try
+            {
+                currentSound.source.Stop();
+            }
+            catch (MissingReferenceException e)
+            {
+                Debug.LogWarning("SoundManager -> Play ( name: " + name + ") " + e);
+            }
         }
     }
 
+
     public static class SoundTitles
     {
+        public const string MenuMusic = "MenuMusic";
         public const string FirstSceneMusic = "FirstSceneMusic";
         public const string DestroyShip = "DestroyShip";
         public const string DamageEnemy = "DamageEnemy";

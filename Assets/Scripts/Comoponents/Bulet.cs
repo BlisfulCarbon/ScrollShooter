@@ -7,14 +7,14 @@ namespace ScrollShooter.Components
     public class Bulet : Actor
     {
         [Header("Movement Variables")] public float speed;
-        private Rigidbody2D rigidbody;
+        private Rigidbody2D  rigidbody;
 
         [Header("Damage")] public int damage;
         public GameObject impactParticle;
 
         private void Start()
         {
-            EventAggregator.TakeShot.Publish(this);
+            EventManager.TakeShot.Publish();
             rigidbody = GetComponent<Rigidbody2D>();
             rigidbody.velocity = new Vector2(0f, speed);
         }
