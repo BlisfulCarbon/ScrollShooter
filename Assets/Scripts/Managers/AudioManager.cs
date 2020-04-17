@@ -1,29 +1,34 @@
 ﻿using System.Collections.Generic;
-using JetBrains.Annotations;
-using ScrollShooter.Events;
-using UnityEngine;
 using ScrollShooter.Data;
+using UnityEngine;
 
 namespace ScrollShooter.Managers
 {
-    public class AudioManager : BaseManager<AudioManager>
+    public class AudioManager : BaseManager
     {
         public List<Sound> sounds;
 
         private void Start()
         {
+            Debug.Log("Audio Manager start");
             Play(SoundTitles.MenuMusic);
-            
-            EventManager.gameStart.Subscribe(() =>
+
+            EventsManager.gameStart.Subscribe(() =>
             {
                 Stop(SoundTitles.MenuMusic);
                 Play(SoundTitles.FirstSceneMusic);
             });
-            
-            EventManager.enemyDied.Subscribe(() => Play(SoundTitles.DestroyShip));
-            EventManager.enemyGetDamage.Subscribe(() => Play(SoundTitles.DamageEnemy));
-            EventManager.TakeShot.Subscribe(() => Play(SoundTitles.Laser));
-            EventManager.enemySmashIntoPlayer.Subscribe(() => Play(SoundTitles.GameOver));
+
+            EventsManager.gameOver.Subscribe(() =>
+            {
+                Stop(SoundTitles.FirstSceneMusic);
+                Play(SoundTitles.MenuMusic);
+            });
+
+            EventsManager.enemyDied.Subscribe(() => Play(SoundTitles.DestroyShip));
+            EventsManager.enemyGetDamage.Subscribe(() => Play(SoundTitles.DamageEnemy));
+            EventsManager.TakeShot.Subscribe(() => Play(SoundTitles.Laser));
+            EventsManager.enemySmashIntoPlayer.Subscribe(() => Play(SoundTitles.GameOver));
         }
 
         private void Awake()
@@ -77,7 +82,6 @@ namespace ScrollShooter.Managers
             }
         }
     }
-
 
     public static class SoundTitles
     {

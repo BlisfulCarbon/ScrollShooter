@@ -1,9 +1,9 @@
-﻿using ScrollShooter.Events;
-using ScrollShooter.Interfaces;
+﻿using ScrollShooter.Interfaces;
+using ScrollShooter.Managers;
 
 namespace ScrollShooter.Components
 {
-    public class EnemyHealth : Actor, Idamageable, Enemy
+    public class EnemyHealth : BaseComponent, Idamageable, Enemy
     {
         public int health;
 
@@ -11,14 +11,14 @@ namespace ScrollShooter.Components
         {
             if (health <= 0)
             {
-                EventManager.enemyDied.Publish();
+                EventsManager.enemyDied.Publish();
                 Destroy(this.gameObject);
             }
         }
 
         public void TakeDamage(int damage)
         {
-            EventManager.enemyGetDamage.Publish();
+            EventsManager.enemyGetDamage.Publish();
             health -= damage;
         }
     }

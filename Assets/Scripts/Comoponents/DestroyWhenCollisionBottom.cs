@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Components
 {
-    public class DestroyWhenCollisionBottom : MonoBehaviour
+    public class DestroyWhenCollisionBottom : BaseComponent
     {
         private void OnTriggerEnter2D(Collider2D other)
         {

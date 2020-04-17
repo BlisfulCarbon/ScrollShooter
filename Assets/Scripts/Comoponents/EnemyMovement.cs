@@ -1,9 +1,10 @@
 ﻿using System;
+using ScrollShooter.Interfaces;
 using UnityEngine;
 
 namespace ScrollShooter.Components
 {
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyMovement : BaseComponent, InteractiveGameObject
     {
         public enum MoveStrategy
         {
@@ -52,6 +53,12 @@ namespace ScrollShooter.Components
             xNew = (float) (amplitude * Math.Sin(period * yNew) + shift);
             Vector2 temPosition = new Vector2(xNew, yNew);
             transform.position = temPosition;
+        }
+
+        public void StopMove()
+        {
+            yChange = 0;
+            speed = 0;
         }
     }
 }

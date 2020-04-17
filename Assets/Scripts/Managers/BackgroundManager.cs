@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using ScrollShooter.Events;
-using UnityEngine;
 using ScrollShooter.Config;
+using UnityEngine;
 
 namespace ScrollShooter.Managers
 {
-    public class BackgroundManager : BaseManager<BackgroundManager>
+    public class BackgroundManager : BaseManager
     {
         [Header("Game process variable")]
         public float speed = 0.2f;
@@ -14,17 +13,26 @@ namespace ScrollShooter.Managers
         [Header("Game start variable")] 
         public float boostTime = Constants.timeForStartingGame;
         public float boostSpeed = 3f;
+        
+        
+        
+        [Header("Game start variable")] 
+        public float slowDownTime = Constants.timeWhenEnemySmashIntoPlayer;
+        public float slowDownSpeed = .3f;
 
         private void Awake()
         {
-            EventManager.gameStart.Subscribe(() => StartCoroutine(BoostScrolling(boostTime, boostSpeed)));
+            Debug.Log("Backgroung manager");
+            
+            EventsManager.gameStart.Subscribe(() => StartCoroutine(BoostScrolling(boostTime, boostSpeed)));
+            EventsManager.enemySmashIntoPlayer.Subscribe(() => StartCoroutine(BoostScrolling(slowDownTime, slowDownSpeed)));
         }
 
         private void Update()
         {
             bgRend.material.mainTextureOffset = new Vector2(0, Time.time * speed);
         }
-
+        
         private IEnumerator BoostScrolling(float boostTime, float boost)
         {
             speed *= boost;

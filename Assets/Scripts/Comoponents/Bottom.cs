@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Components
 {
-    public class Bottom : MonoBehaviour
+    public class Bottom : BaseComponent
     {
     }
 }

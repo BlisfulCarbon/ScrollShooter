@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Components
 {
-    public class DestroyByTime : MonoBehaviour
+    public class DestroyByTime : BaseComponent
     {
         public float destroyTime = 0;
 

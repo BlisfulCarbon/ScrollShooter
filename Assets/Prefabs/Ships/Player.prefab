@@ -4931,6 +4931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6d9896d04c99f478890c200ded8cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactParticle: {fileID: 380124358688770450, guid: 45641edadbfcf954c831b80844da2f62,
+    type: 3}
 --- !u!50 &3963656863606953224
 Rigidbody2D:
   serializedVersion: 4
@@ -4951,7 +4953,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &9043315327357140988
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Components
 {
-    public class PlayerFire : MonoBehaviour
+    public class PlayerFire : BaseComponent
     {
         [Header("Fire Variables")] 
         public Transform firePoint;

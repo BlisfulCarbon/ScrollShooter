@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScrollShooter.Events
 {
-    public class BaseEvent 
+    public class BaseEvent
     {
         private readonly List<Action> _callbacks = new List<Action>();
 
@@ -16,7 +16,16 @@ namespace ScrollShooter.Events
         public void Publish()
         {
             foreach (var callback in _callbacks)
-                callback();
+            {
+                try
+                {
+                    callback();
+                }
+                catch (MissingReferenceException e)
+                {  
+                    Debug.LogWarning("BaseEvent -> Publish callback: " + callback.GetType().Name + " " + e);
+                }
+            }
         }
     }
 }

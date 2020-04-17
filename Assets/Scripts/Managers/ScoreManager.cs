@@ -1,16 +1,18 @@
-﻿using UnityEngine.UI;
-using ScrollShooter.Events;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace ScrollShooter.Managers
 {
-    public class ScoreManager : BaseManager<ScoreManager>
+    public class ScoreManager : BaseManager
     {
-        public Text scoreInput;
+        private Text scoreInput;
         private Score _score;
 
         private void Start()
         {
-            EventManager.enemyDied.Subscribe(OnIncrementScore);
+            scoreInput = gameObject.GetComponent<Text>();
+            
+            EventsManager.enemyDied.Subscribe(OnIncrementScore);
             _score = new Score();
         }
 

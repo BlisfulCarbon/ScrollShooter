@@ -7,7 +7,7 @@ namespace ScrollShooter.Config
         // TODO: Show from inspector
         [Header("Default initialization game parameters")]
         public const float timeForStartingGame = 3.3f;
-        
+        public const float timeWhenEnemySmashIntoPlayer = 6f;
         
         public static readonly float upBoundaries = 5.8f;
         public static readonly float downBoundaries = 2.2f;

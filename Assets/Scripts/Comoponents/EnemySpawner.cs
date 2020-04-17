@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using ScrollShooter.Interfaces;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace ScrollShooter.Components
 {
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : BaseComponent, InteractiveGameObject
     {
         public float spawnTimer = 2;
         public float timer;
@@ -34,8 +35,8 @@ namespace ScrollShooter.Components
         private void SpawnSimpleWave()
         {
             Instantiate(simpleEnemy, new Vector3(transform.position.x - 1, transform.position.y), Quaternion.identity);
-            Instantiate(simpleEnemy, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
-            Instantiate(simpleEnemy, new Vector3(transform.position.x + 0.8f, transform.position.y),
+            Instantiate(simpleEnemy, new Vector3(transform.position.x - .2f, transform.position.y), Quaternion.identity);
+            Instantiate(simpleEnemy, new Vector3(transform.position.x + .8f, transform.position.y),
                 Quaternion.identity);
         }
 

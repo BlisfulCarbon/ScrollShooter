@@ -1,15 +1,17 @@
-﻿using ScrollShooter.Events;
-using ScrollShooter.Interfaces;
+﻿using ScrollShooter.Interfaces;
+using ScrollShooter.Managers;
 using UnityEngine;
 
-public class DestroyWhenCollisionEnemy : Actor
+public class DestroyWhenCollisionEnemy : BaseComponent
 {
+    public GameObject impactParticle;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<Enemy>() == null)
             return;
 
-        EventManager.enemySmashIntoPlayer.Publish();
-        Destroy(this.gameObject);
+        EventsManager.enemySmashIntoPlayer.Publish();
+        Instantiate(impactParticle, transform.position, Quaternion.identity);
+        // Destroy(this.gameObject);
     }
 }

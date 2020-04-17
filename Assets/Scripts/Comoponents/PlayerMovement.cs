@@ -1,9 +1,10 @@
 ﻿using ScrollShooter.Config;
+using ScrollShooter.Interfaces;
 using UnityEngine;
 
 namespace ScrollShooter.Components
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : BaseComponent
     {
         [Header("Movement setting")] public float controlMultiplier;
         public bool isControlling;
@@ -16,6 +17,7 @@ namespace ScrollShooter.Components
 
         private float xDiff;
         private float yDiff;
+        
 
         private void Update()
         {

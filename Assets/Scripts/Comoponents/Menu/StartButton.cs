@@ -1,4 +1,5 @@
 ﻿using ScrollShooter.Events;
+using ScrollShooter.Managers;
 using UnityEngine;
 
 namespace ScrollShooter.Components
@@ -15,7 +16,7 @@ namespace ScrollShooter.Components
                 gameObject.AddForce(transform.up * (-1.0f * loweringForce), ForceMode2D.Impulse);
             }
 
-            EventManager.gameStart.Publish();
+            EventsManager.buttonStartPressed.Publish();
         }
     }
 }
