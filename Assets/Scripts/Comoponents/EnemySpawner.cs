@@ -35,7 +35,7 @@ namespace ScrollShooter.Components
         private void SpawnSimpleWave()
         {
             Instantiate(simpleEnemy, new Vector3(transform.position.x - 1, transform.position.y), Quaternion.identity);
-            Instantiate(simpleEnemy, new Vector3(transform.position.x - .2f, transform.position.y), Quaternion.identity);
+            Instantiate(simpleEnemy, new Vector3(transform.position.x - .05f, transform.position.y), Quaternion.identity);
             Instantiate(simpleEnemy, new Vector3(transform.position.x + .8f, transform.position.y),
                 Quaternion.identity);
         }
