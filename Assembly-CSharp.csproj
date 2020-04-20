@@ -58,18 +58,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Comoponents\Bottom.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\Bullet.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\DestroyByTime.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\DestroyWhenCollisionBottom.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\DestroyWhenCollisionEnemy.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\EnemyHealth.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\EnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\EnemySpawner.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\Menu\ReturnToMenu.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\Menu\StartButton.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\PlayerFire.cs" />
-     <Compile Include="Assets\Scripts\Comoponents\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\BaseComponent.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Menus\ReturnToMenu.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Menus\StartButton.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\Bottom.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\PlayerFire.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Units\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Utils\DestroyByTime.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Utils\DestroyWhenCollisionBottom.cs" />
+     <Compile Include="Assets\Scripts\Comoponents\Utils\DestroyWhenCollisionEnemy.cs" />
      <Compile Include="Assets\Scripts\Comoponents\Utils\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\Config\Constants.cs" />
      <Compile Include="Assets\Scripts\Data\Sound.cs" />
@@ -79,20 +80,20 @@
      <Compile Include="Assets\Scripts\Events\EnemyDiedEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EnemyGetDamageEvent.cs" />
      <Compile Include="Assets\Scripts\Events\EnemySmashIntoPlayerEvent.cs" />
+     <Compile Include="Assets\Scripts\Events\EventsAggregator.cs" />
      <Compile Include="Assets\Scripts\Events\GameOverEvent.cs" />
      <Compile Include="Assets\Scripts\Events\GameStartEvent.cs" />
      <Compile Include="Assets\Scripts\Events\TakeShotEvent.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Enemy.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\Idamageable.cs" />
-     <Compile Include="Assets\Scripts\Interfaces\InteractiveGameObject.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IActor.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IEnemy.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IInteractiveGameObject.cs" />
      <Compile Include="Assets\Scripts\Managers\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Managers\BackgroundManager.cs" />
      <Compile Include="Assets\Scripts\Managers\BaseManager.cs" />
-     <Compile Include="Assets\Scripts\Managers\EventsManger.cs" />
      <Compile Include="Assets\Scripts\Managers\GameProcessManager.cs" />
      <Compile Include="Assets\Scripts\Managers\ObjectsManager.cs" />
      <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
-     <Compile Include="Assets\Scripts\Model\BaseComponent.cs" />
      <Compile Include="Assets\Scripts\Model\Score.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/programming/gameDev/Projects/ScrollShoter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
