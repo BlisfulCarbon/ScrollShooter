@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using ScrollShooter.Interfaces;
+using UnityEngine;
 
 namespace ScrollShooter.Components
 {
-    public class PlayerFire : BaseComponent
+    public class PlayerFire : BaseComponent, IActor
     {
         [Header("Fire Variables")] 
         public Transform firePoint;

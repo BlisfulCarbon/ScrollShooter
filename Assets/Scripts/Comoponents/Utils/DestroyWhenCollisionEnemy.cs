@@ -1,5 +1,6 @@
-﻿using ScrollShooter.Interfaces;
-using ScrollShooter.Managers;
+﻿using ScrollShooter.Components;
+using ScrollShooter.Events;
+using ScrollShooter.Interfaces;
 using UnityEngine;
 
 public class DestroyWhenCollisionEnemy : BaseComponent
@@ -7,10 +8,10 @@ public class DestroyWhenCollisionEnemy : BaseComponent
     public GameObject impactParticle;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<Enemy>() == null)
+        if (other.GetComponent<IEnemy>() == null)
             return;
 
-        EventsManager.enemySmashIntoPlayer.Publish();
+        EventsAggregator.enemySmashIntoPlayer.Publish();
         Instantiate(impactParticle, transform.position, Quaternion.identity);
         // Destroy(this.gameObject);
     }

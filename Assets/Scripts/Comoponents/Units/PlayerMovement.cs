@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScrollShooter.Components
 {
-    public class PlayerMovement : BaseComponent
+    public class PlayerMovement : BaseComponent, IActor
     {
         [Header("Movement setting")] public float controlMultiplier;
         public bool isControlling;

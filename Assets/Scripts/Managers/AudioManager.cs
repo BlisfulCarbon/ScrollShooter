@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using ScrollShooter.Data;
+using ScrollShooter.Events;
 using UnityEngine;
 
 namespace ScrollShooter.Managers
@@ -10,25 +11,24 @@ namespace ScrollShooter.Managers
 
         private void Start()
         {
-            Debug.Log("Audio Manager start");
             Play(SoundTitles.MenuMusic);
 
-            EventsManager.gameStart.Subscribe(() =>
+            EventsAggregator.gameStart.Subscribe(() =>
             {
                 Stop(SoundTitles.MenuMusic);
                 Play(SoundTitles.FirstSceneMusic);
             });
 
-            EventsManager.gameOver.Subscribe(() =>
+            EventsAggregator.gameOver.Subscribe(() =>
             {
                 Stop(SoundTitles.FirstSceneMusic);
                 Play(SoundTitles.MenuMusic);
             });
 
-            EventsManager.enemyDied.Subscribe(() => Play(SoundTitles.DestroyShip));
-            EventsManager.enemyGetDamage.Subscribe(() => Play(SoundTitles.DamageEnemy));
-            EventsManager.TakeShot.Subscribe(() => Play(SoundTitles.Laser));
-            EventsManager.enemySmashIntoPlayer.Subscribe(() => Play(SoundTitles.GameOver));
+            EventsAggregator.enemyDied.Subscribe(() => Play(SoundTitles.DestroyShip));
+            EventsAggregator.enemyGetDamage.Subscribe(() => Play(SoundTitles.DamageEnemy));
+            EventsAggregator.TakeShot.Subscribe(() => Play(SoundTitles.Laser));
+            EventsAggregator.enemySmashIntoPlayer.Subscribe(() => Play(SoundTitles.GameOver));
         }
 
         private void Awake()

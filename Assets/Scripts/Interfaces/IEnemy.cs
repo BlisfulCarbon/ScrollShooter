@@ -1,6 +1,6 @@
 ﻿namespace ScrollShooter.Interfaces
 {
-    public interface Enemy
+    public interface IEnemy
     {
     }
 }

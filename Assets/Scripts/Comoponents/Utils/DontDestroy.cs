@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Components
 {
-    public class DontDestroy : MonoBehaviour
+    public class DontDestroy : BaseComponent
     {
         private static bool _isApplicationQuitting;
         public static DontDestroy _instance;
@@ -12,7 +12,6 @@ namespace ScrollShooter.Components
         {
             if (_instance == null)
             {
-                Debug.Log("Find singleton " + typeof(DontDestroy));
                 _instance = FindObjectOfType<DontDestroy>();
             }
             if (_instance == null)

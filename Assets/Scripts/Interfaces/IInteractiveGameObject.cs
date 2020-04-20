@@ -2,7 +2,7 @@
 
 namespace ScrollShooter.Interfaces
 {
-    public interface InteractiveGameObject
+    public interface IInteractiveGameObject
     {
         void OnEnable();
         

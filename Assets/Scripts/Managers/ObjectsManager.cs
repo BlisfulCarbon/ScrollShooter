@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using ScrollShooter.Components;
+using ScrollShooter.Events;
 using ScrollShooter.Interfaces;
 using UnityEngine;
 
@@ -8,12 +10,12 @@ namespace ScrollShooter.Managers
     {
         private void Awake()
         {
-            EventsManager.gameOver.Subscribe(StopAllEnemys);
+            EventsAggregator.gameOver.Subscribe(StopAllEnemys);
         }
 
         private void StopAllEnemys()
         {
-            foreach (var enemy in FindObjectsOfType<MonoBehaviour>().OfType<InteractiveGameObject>())
+            foreach (var enemy in FindObjectsOfType<MonoBehaviour>().OfType<IActor>())
             {
                 enemy.OnDisable();
             }

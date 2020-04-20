@@ -1,6 +1,6 @@
 ﻿namespace ScrollShooter.Interfaces
 {
-    public interface Idamageable
+    public interface IDamageable
     {
         void TakeDamage(int damage);
     }

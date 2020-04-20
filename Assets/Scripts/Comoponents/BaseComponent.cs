@@ -1,7 +1,9 @@
 ﻿using ScrollShooter.Interfaces;
 using UnityEngine;
 
-    public abstract class BaseComponent : MonoBehaviour, InteractiveGameObject
+namespace ScrollShooter.Components
+{
+    public abstract class BaseComponent : MonoBehaviour, IInteractiveGameObject
     {
         public void OnEnable()
         {
@@ -13,3 +15,4 @@ using UnityEngine;
             this.gameObject.SetActive(false);
         }
     }
+}

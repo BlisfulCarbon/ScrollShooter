@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ScrollShooter.Components
 {
-    public class EnemyMovement : BaseComponent, InteractiveGameObject
+    public class EnemyMovement : BaseComponent, IActor
     {
         public enum MoveStrategy
         {

@@ -20,8 +20,9 @@ namespace ScrollShooter.Events
                 try
                 {
                     callback();
-                }
-                catch (MissingReferenceException e)
+                } 
+                
+                catch (Exception e)
                 {  
                     Debug.LogWarning("BaseEvent -> Publish callback: " + callback.GetType().Name + " " + e);
                 }

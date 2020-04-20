@@ -1,10 +1,10 @@
-﻿using UnityEngine.Audio;
+﻿using System;
 using UnityEngine;
 
 namespace ScrollShooter.Data
 {
 
-    [System.Serializable]
+    [Serializable]
     public class Sound
     {
         public string name;

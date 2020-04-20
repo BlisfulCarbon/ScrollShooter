@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace ScrollShooter.Components
+﻿namespace ScrollShooter.Components
 {
     public class DestroyByTime : BaseComponent
     {

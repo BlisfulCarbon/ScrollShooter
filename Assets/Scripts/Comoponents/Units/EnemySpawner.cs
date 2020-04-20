@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 namespace ScrollShooter.Components
 {
-    public class EnemySpawner : BaseComponent, InteractiveGameObject
+    public class EnemySpawner : BaseComponent, IActor
     {
         public float spawnTimer = 2;
         public float timer;

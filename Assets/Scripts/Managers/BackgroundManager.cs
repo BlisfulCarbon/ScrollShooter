@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ScrollShooter.Config;
+using ScrollShooter.Events;
 using UnityEngine;
 
 namespace ScrollShooter.Managers
@@ -22,10 +23,8 @@ namespace ScrollShooter.Managers
 
         private void Awake()
         {
-            Debug.Log("Backgroung manager");
-            
-            EventsManager.gameStart.Subscribe(() => StartCoroutine(BoostScrolling(boostTime, boostSpeed)));
-            EventsManager.enemySmashIntoPlayer.Subscribe(() => StartCoroutine(BoostScrolling(slowDownTime, slowDownSpeed)));
+            EventsAggregator.gameStart.Subscribe(() => StartCoroutine(BoostScrolling(boostTime, boostSpeed)));
+            EventsAggregator.enemySmashIntoPlayer.Subscribe(() => StartCoroutine(BoostScrolling(slowDownTime, slowDownSpeed)));
         }
 
         private void Update()

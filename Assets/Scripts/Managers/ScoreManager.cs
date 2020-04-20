@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using ScrollShooter.Events;
 using UnityEngine.UI;
 
 namespace ScrollShooter.Managers
@@ -12,7 +12,7 @@ namespace ScrollShooter.Managers
         {
             scoreInput = gameObject.GetComponent<Text>();
             
-            EventsManager.enemyDied.Subscribe(OnIncrementScore);
+            EventsAggregator.enemyDied.Subscribe(OnIncrementScore);
             _score = new Score();
         }
 

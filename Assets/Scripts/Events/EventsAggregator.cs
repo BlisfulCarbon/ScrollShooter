@@ -1,8 +1,6 @@
-﻿using ScrollShooter.Events;
-
-namespace ScrollShooter.Managers
+﻿namespace ScrollShooter.Events
 {
-    public class EventsManager : BaseManager
+    public class EventsAggregator
     {
         // Menu events
         public static readonly ButtonStartPressedEvent buttonStartPressed = new ButtonStartPressedEvent();
